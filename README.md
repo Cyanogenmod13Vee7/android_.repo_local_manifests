@@ -1,9 +1,9 @@
 CM13 Manifests
 ========================
 
-Project V1 / Project Vee3
+Project Vee7
 
-Local manifests to build Android MarshMallow 6.0 to L1II and L3II
+Local manifests to build Android MarshMallow 6.0 for L7II
 
 To initialize CM13 Repo:
 
@@ -25,10 +25,6 @@ To initialize the environment
 
     . build/envsetup.sh
 
-To build for L1 II:
+To build:
 
-    brunch v1
-
-To build for L3 II:
-
-    brunch vee3
+    brunch vee7
