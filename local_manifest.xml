@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-	<!-- Remote names -->
-	<remote name="cm" fetch="https://github.com/CyanogenMod/" />
-	<remote name="tv" fetch="https://github.com/TeamVee/" />
-	<remote name="omni" fetch="https://github.com/omnirom/" />
-	<!-- Unofficial Builds -->
-	<remove-project name="CyanogenMod/android_packages_apps_CMUpdater" />
-	<!-- Use Custom HAL -->
-	<project path="hardware/qcom/display-caf/msm7x27a" name="android_hardware_qcom_display" revision="cm-13.0" remote="tv" />
-	<project path="hardware/qcom/media-caf/msm7x27a" name="android_hardware_qcom_media" revision="cm-12.1" remote="tv" />
-	<!-- TWRP -->
-	<project path="bootable/recovery-omni" name="android_bootable_recovery" revision="android-6.0" remote="omni" />
-	<project path="external/busybox" name="android_external_busybox" revision="cm-13.0" remote="cm" />
-	<!-- Vee Projects -->
-	<project path="device/lge/vee-common" name="android_device_lge_vee-common" revision="cm-13.0" remote="tv" />
-	<project path="device/lge/v1" name="android_device_lge_v1" revision="cm-13.0" remote="tv" />
-	<project path="device/lge/vee3" name="android_device_lge_vee3" revision="cm-13.0" remote="tv" />
-	<!-- Common Projects -->
-	<project path="kernel/lge/msm7x27a-common" name="lge-kernel-lproj" revision="cm-13.0" remote="tv" />
-	<project path="vendor/lge" name="android_vendor_lge" revision="cm-13.0" remote="tv" />
-	<!-- Stlport -->
-	<project path="external/stlport" name="android_external_stlport" revision="cm-13.0" remote="cm" />
-	<!-- GPS -->
-	<remove-project name="CyanogenMod/android_hardware_qcom_gps" />
-	<project path="hardware/qcom/gps" name="android_hardware_qcom_gps" revision="cm-13.0" remote="tv" />
+   <manifest>
+	   
+    <!-- Remote names -->
+    <remote name="bucket" fetch="https://bitbucket.org" revision="master" />
+    <remote name="nd" fetch="https://github.com/Cyanogenmod13Vee7" />
+
+    <!-- Remove CMUpdater - Unofficial Builds -->
+    <remove-project name="CyanogenMod/android_packages_apps_CMUpdater" />
+	
+    <!-- GPS -->
+    <remove-project name="CyanogenMod/android_hardware_qcom_gps" />
+    <project path="hardware/qcom/gps" name="CM13-Y300/android_hardware_qcom_gps" remote="github" revision="cm-13.0" />
+    
+    <!-- QCOM Hardware -->
+    <project path="hardware/qcom/display-caf/msm7x27a" name="Cyanogenmod13Vee7/android_hardware_qcom_display-caf" remote="github" revision="cm-13.0" />
+    <project path="hardware/qcom/media-caf/msm7x27a" name="Cyanogenmod13Vee7/hardware_qcom_media" remote="github" revision="lp5.1" />
+    
+    <!-- Stlport -->
+    <project path="external/stlport" name="CyanogenMod/android_external_stlport" remote="github" revision="cm-13.0" /> 
+	 
+    <!-- UBERTC 4.9 kernel toolchain -->
+    <remove-project name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="pdk,linux,arm" remote="aosp" />
+    <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="UBERTC/arm-eabi-4.9" groups="pdk,linux,arm" remote="bucket"/>
+
+    <!-- RIL -->
+    <project path="hardware/ril-legacy"                name="jsr-d9/android_hardware_ril-legacy"             remote="github" revision="cm-13.0" />
+
+    <!-- Busybox -->
+    <project path="external/busybox" name="android_external_busybox" revision="cm-13.0" remote="cm" />
+    
+    <!-- Vee Projects -->
+    <project path="device/lge/vee7" name="android_device_lge_vee7" revision="cm-13.0" remote="nd" />
+    <project path="vendor/lge/vee7" name="android_vendor_lge_vee7" revision="cm-13.0" remote="nd" />
+    <project path="kernel/lge/vee7" name="lge-kernel-lproj" revision="cm-13.0" remote="nd" />
+    
+
 </manifest>
